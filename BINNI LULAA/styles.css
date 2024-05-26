@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevenir scroll */
+}
+
+body {
+    font-family: 'Brygada 1918', sans-serif;
+    color: #ffffff;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Superposición oscura */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+}
+
+.overlay .logo {
+    width: 240px; /* Ajuste del tamaño del logo */
+    margin-bottom: 20px;
+}
+
+.overlay h1 {
+    font-size: 6rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para el título */
+}
+
+.overlay p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para la descripción */
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+}
+
+.links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para el título */
+}
+
+
+
+
+
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.social-icon {
+    background: #ffffff;
+    border-radius: 50%;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #ffffff; /* Color de resaltado */
+    color: #fff;
+}
+
+.social-icon:hover ~ .social-icon {
+    filter: brightness(0.5);
+}
+
+.social-icon:hover ~ .social-icon:hover {
+    filter: brightness(1);
+}
+
+.social-icon i {
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .overlay {
+        width: 90%;
+    }
+    
+    .overlay h1 {
+        font-size: 5rem;
+    }
+
+    .overlay p {
+        font-size: 1.2rem;
+    }
+
+    .overlay .logo {
+        width: 120px; /* Ajuste del tamaño del logo en móviles */
+    }
+
+    .links {
+        flex-direction: column; /* Mostrar los enlaces en columna */
+        align-items: center; /* Centrar los enlaces */
+    }
+
+    .links a {
+        margin: 10px 0; /* Espacio entre enlaces en móviles */
+        width: 100%; /* Ancho completo de los enlaces */
+        text-align: center; /* Centrar el texto dentro de los enlaces */
+    }
+}
